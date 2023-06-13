@@ -1,0 +1,43 @@
+
+@host = {{localhost5000}}
+
+@serverPath = {{host}}/server/api
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2Nzk3MTU5NCwianRpIjoiYzE4NWYwNTQtMjkzNi00YzEzLTgyNjMtZjUzZTE4NTYxMDJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IndpdGh5b3VfNjc1NzcyIiwibmJmIjoxNjY3OTcxNTk0fQ.8H8Gd-pHhSr-zv7jde0dmsQN-yo1EPQf4iw4XNWBw2U
+
+
+# ### 
+# POST {{serverPath}}/addpost
+# Authorization: Bearer {{token}}
+
+# {
+#      "post": "new post" ,
+#      "desc":  "dscription"
+# }
+
+### 
+GET {{serverPath}}/admin/userslist
+Authorization: Bearer {{token}}
+
+### 
+GET {{serverPath}}/admin/dashboard/utils
+Authorization: Bearer {{token}}
+
+### 
+GET {{serverPath}}/admin/projects/list
+Authorization: Bearer {{token}}
+
+###
+POST {{serverPath}}/admin/projects/add
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+"projectName" : "new project 3",
+"projectDescription" : "new project description",
+"status" : 1,
+"projectType" : {
+    "key" : "education",
+    "value" : "Education"
+}
+}

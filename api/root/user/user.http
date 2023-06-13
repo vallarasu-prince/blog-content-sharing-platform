@@ -1,0 +1,15 @@
+
+# <TITLE>
+
+@host={{localhost5000}}
+@serverPath={{host}}/server/api
+
+
+### 
+GET {{serverPath}}/users/details
+
+### 
+GET {{serverPath}}/users/list
+
+     
+
