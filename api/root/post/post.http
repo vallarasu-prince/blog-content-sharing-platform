@@ -1,0 +1,26 @@
+@host={{localhost5000}}
+@serverPath={{host}}/server/api
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY2Nzk3MTU5NCwianRpIjoiYzE4NWYwNTQtMjkzNi00YzEzLTgyNjMtZjUzZTE4NTYxMDJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IndpdGh5b3VfNjc1NzcyIiwibmJmIjoxNjY3OTcxNTk0fQ.8H8Gd-pHhSr-zv7jde0dmsQN-yo1EPQf4iw4XNWBw2U
+
+
+### Add post
+POST  {{serverPath}}/post/add
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "_id": "withyou_675772_1887836",
+    "title": "title1234",
+    "post" : {
+        "publicUrl": "https://www.youtube.com/watch?v=9bZkp7q19f0"
+    },
+    "content": "content",
+    "tags": ["tag1", "tag2"]
+}
+
+### Get post by using post id
+@postId=withyou_675772_1887836
+
+GET {{serverPath}}/post/{{postId}}
+Authorization: Bearer {{token}}
